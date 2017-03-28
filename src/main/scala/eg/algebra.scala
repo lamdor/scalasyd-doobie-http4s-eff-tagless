@@ -27,13 +27,14 @@ trait BandArtistRepository[F[_]] {
 }
 
 trait WebInterface[F[_], W] {
-  // better names... it's usually a braket
+  // TODO: better names... it's usually a braket
   def useWebInterface(port: Int,
                       onStart: W => F[Unit],
                       onShutdown: W => F[Unit])(implicit bandArtistRepository: BandArtistRepository[F]): F[Unit]
 }
 
 trait SystemInteruption[F[_]] {
+  // TODO: can these hooks just be F[Unit]
   case class ShutdownHook(waitForShutdownRequested: () => F[Unit],
                           readyForShutdown: () => F[Unit])
 
