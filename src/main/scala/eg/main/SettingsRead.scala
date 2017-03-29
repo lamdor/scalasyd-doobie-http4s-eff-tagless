@@ -1,17 +1,22 @@
 package eg
 package main
 
+import cats._, cats.implicits._, cats.data._
+
 import org.atnos.eff._
-import java.io.File
+import org.atnos.eff.all._
+import org.atnos.eff.syntax.all._
+
 import fs2.Task
+import org.atnos.eff.addon.fs2._
+import org.atnos.eff.addon.fs2.task._
+
 import pureconfig._
 import pureconfig.error.ConfigReaderFailures
 import eu.timepit.refined.pureconfig._
-import org.atnos.eff.addon.fs2._
-import org.atnos.eff.addon.fs2.task._
 import com.typesafe.config.{Config, ConfigFactory}
-import scala.util.control.NoStackTrace
 
+import scala.util.control.NoStackTrace
 
 case class SettingsReadConfigFailures(failures: ConfigReaderFailures) extends RuntimeException with NoStackTrace
 

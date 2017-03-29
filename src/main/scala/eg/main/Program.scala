@@ -1,14 +1,17 @@
 package eg.main
 
-import org.atnos.eff._
-import org.atnos.eff.addon.fs2._
-import org.atnos.eff.syntax.all._
-import org.atnos.eff.syntax.addon.fs2.task._
 import scala.concurrent.ExecutionContext
+
+import cats._, cats.implicits._, cats.data._
+import cats.arrow.FunctionK
+
+import org.atnos.eff._
+import org.atnos.eff.all._
+import org.atnos.eff.syntax.all._
+
 import fs2.Task
-import cats.data.Reader
-import cats._
-import cats.arrow._
+import org.atnos.eff.addon.fs2._
+import org.atnos.eff.syntax.addon.fs2.task._
 
 object ProgramStack {
   type S = Fx.fx2[TimedTask,

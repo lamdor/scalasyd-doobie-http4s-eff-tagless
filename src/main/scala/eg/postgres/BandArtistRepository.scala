@@ -1,8 +1,14 @@
 package eg
 package postgres
 
+import cats._, cats.implicits._, cats.data._
+
 import org.atnos.eff._
+import org.atnos.eff.all._
+import org.atnos.eff.syntax.all._
 // import org.atnos.eff.addon.fs2._
+
+import doobie.imports._
 
 final class BandArtistRepository[S] extends eg.BandArtistRepository[Eff[S, ?]] {
 

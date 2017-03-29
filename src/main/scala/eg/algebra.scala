@@ -1,8 +1,6 @@
 package eg
 
-import cats.Monad
-import cats.syntax.functor._
-import cats.syntax.flatMap._
+import cats._, cats.implicits._, cats.data._
 import java.time.LocalDate
 
 case class BandId(id: Long) extends AnyVal

@@ -1,7 +1,7 @@
 package eg
 
 import java.io.File
-import eu.timepit.refined.W
+import eu.timepit.refined._
 import eu.timepit.refined.api.Refined
 import eu.timepit.refined.boolean._
 import eu.timepit.refined.numeric._

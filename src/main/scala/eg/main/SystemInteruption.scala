@@ -1,6 +1,8 @@
 package eg
 package main
 
+import cats._, cats.implicits._, cats.data._
+
 import org.atnos.eff._
 import org.atnos.eff.addon.fs2._
 import org.atnos.eff.addon.fs2.task._

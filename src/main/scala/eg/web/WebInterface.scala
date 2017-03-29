@@ -1,25 +1,27 @@
 package eg
 package web
 
+import cats._, cats.implicits._, cats.data._
+
 import org.atnos.eff._
 import org.atnos.eff.all._
 import org.atnos.eff.syntax.all._
+
+import fs2.Task
 import org.atnos.eff.addon.fs2._
 import org.atnos.eff.addon.fs2.task._
 import org.atnos.eff.syntax.addon.fs2.task._
 
 import org.http4s.HttpService
 import org.http4s.server.Server
-import cats._
-import cats.implicits._
-import cats.data.Reader
 import org.http4s.dsl._
 import org.http4s.circe._
 import org.http4s.server.blaze._
-import fs2.Task
+
 import io.circe._
 import io.circe.syntax._
 import io.circe.generic.auto._
+
 import java.time.LocalDate
 
 final class WebInterface[R](implicit m1: TimedTask |= R,
